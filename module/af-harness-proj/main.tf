@@ -1,7 +1,8 @@
-resource "harness_platform_project" "proj" {    
-  identifier   = var.project
-  name         = var.project
-  description  = "another test project doodad name: ${local.test_var}"
-  org_id       = "default"
-  color        = "#0063F7"
-}
+resource "harness_platform_project" "proj" {
+  for_each = var.projects
+    identifier   = each.key
+    name         = each.key
+    description  = "another test project doodad name: ${each.key}"
+    org_id       = "default"
+    color        = "#0063F7"
+  }

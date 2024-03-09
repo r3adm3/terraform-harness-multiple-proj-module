@@ -1,0 +1,5 @@
+# rename this file to locals.tf and input a valid api key from harness
+locals {
+  test_var     = "doodad2"
+  proj_api_key = "pat_token here"
+}
